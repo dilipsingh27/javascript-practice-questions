@@ -17,24 +17,7 @@
 
  const isEven = (number) => number%2===0
 
-// function largestEven(numbers) {
-//     let largestEven = -1;
-//     numbers.forEach(number => {
-//         switch(isEven(number)) {
-//             case true: largestEven=Math.max(largestEven,number)
-//             break;
-//         }
-//     });
-
-//     if(largestEven !== -1)
-//     console.log(largestEven)
-//     else
-//     console.log("Even number doesn't exist")
-
-// }
-
-
-const largestEven = (numbers) => {
+function largestEven(numbers) {
     let largestEven = -1;
     numbers.forEach(number => {
         switch(isEven(number)) {
@@ -43,11 +26,27 @@ const largestEven = (numbers) => {
         }
     });
 
-    if(largestEven !== -1)
-    console.log(largestEven)
-    else
-    console.log("Even number doesn't exist")
+    return largestEven
 
 }
 
-largestEven([1,2,3,4,5])
+
+const largestEvenArrow = (numbers) => {
+    let largestEven = -1;
+    numbers.forEach(number => {
+        switch(isEven(number)) {
+            case true: largestEven=Math.max(largestEven,number)
+            break;
+        }
+    });
+
+    return largestEven
+
+}
+
+module.exports = {
+    largestEven:largestEven,
+    largestEvenArrow:largestEvenArrow
+}
+
+// largestEven([1,2,3,4,5])

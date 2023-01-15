@@ -1,31 +1,31 @@
-// function allDigitSameOrNot(num) {
-//    const arr = []
-//    while(num!==0) {
-//     arr.push(num%10)
-//     num = (parseInt(num/10))
-//    }
+function isAllDigitSame(num) {
+   const arr = []
+   while(num!==0) {
+    arr.push(num%10)
+    num = (parseInt(num/10))
+   }
 
-// //    console.log(arr)
-//    let flag =1;
-//    for(let i=1;i<arr.length;i++) {
-//     if(arr[i]===arr[i-1])
-//     continue;
-//     else
-//     {
-//         flag=0;
-//         break;
-//     }
-//    }
+//    console.log(arr)
+   let flag =1;
+   for(let i=1;i<arr.length;i++) {
+    if(arr[i]===arr[i-1])
+    continue;
+    else
+    {
+        flag=0;
+        break;
+    }
+   }
 
-//    if(flag===1)
-//    console.log("true")
-//    else
-//    console.log("false")
+   if(flag===1)
+    return true
+    else
+    return false
 
-// }
+}
 
 
-const allDigitSameOrNot = (num) => {
+const isAllDigitSameArrow = (num) => {
     const arr = []
     while(num!==0) {
      arr.push(num%10)
@@ -45,12 +45,16 @@ const allDigitSameOrNot = (num) => {
     }
  
     if(flag===1)
-    console.log("true")
+    return true
     else
-    console.log("false")
- 
+    return false
  }
 
 
-allDigitSameOrNot(232)
-allDigitSameOrNot(44444)
+// allDigitSameOrNot(232)
+// allDigitSameOrNot(44444)
+
+module.exports = {
+    isAllDigitSame:isAllDigitSame,
+    isAllDigitSameArrow:isAllDigitSameArrow
+}
